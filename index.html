@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React-book-1</title>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+    #container {
+      background-color: yellow;
+      padding: 20px;
+    }
+
+    #container h1 {
+      color: blue;
+      margin: 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="container"></div>
+
+  <script type="text/babel">
+    var destination = document.querySelector("#container");
+
+    class HelloWorld extends React.Component {
+      render() {
+        return (
+          <div>
+            <h3>{this.props.greetTarget}</h3>
+            <p>{this.props.para}</p>
+            <ul>
+              <li>{this.props.listItemOne}</li>
+              <li>{this.props.listItemTwo}</li>
+              <li>{this.props.listItemThree}</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt saepe nostrum labore aliquid soluta vitae eius temporibus libero assumenda aperiam! Ut, similique!</p>
+
+          </div>
+        );
+      }
+    }
+
+
+    ReactDOM.render(
+      <div className="myIdea">
+        <HelloWorld para="Hi this ia a short sentence."
+          greetTarget="Sup dudes"
+          listItemOne="reindeers"
+          listItemTwo="santa"
+          listItemThree="snowman"
+
+        />
+      </div>,
+      destination
+
+    );
+
+
+  </script>
+</body>
+
+</html>
